@@ -59,9 +59,9 @@ function M.qf(opts, ctx)
         buf = item.bufnr,
         item = item,
       }
-    elseif #ret > 0 and ret[#ret].item.text and item.text then
+    elseif #ret > 0 and ret[#ret].item.text and item.lnum then
       ret[#ret].item.text = ret[#ret].item.text .. "\n" .. item.text
-      ret[#ret].item.line = ret[#ret].item.line .. "\n" .. item.text
+      ret[#ret].item.line = ret[#ret].item.lnum .. "\n" .. item.text
     end
   end
   return ctx.filter:filter(ret)
